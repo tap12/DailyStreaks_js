@@ -1,0 +1,11 @@
+{
+  "name": "warsawjs-workshop-35-legacy-code",
+  "version": "1.0.0",
+  "description": "A legacy code application to work on at WarsawJS Workshop #35.",
+  "scripts": {
+    "best-streaks": "node reports/bestStreaks",
+    "current-streaks": "node reports/currentStreaks",
+    "last-7-days": "node reports/lastSevenDays"
+  },
+  "license": "MIT"
+}
