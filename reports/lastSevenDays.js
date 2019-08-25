@@ -1,13 +1,13 @@
-var fs = require('fs');
-var DayDate = require('../src/DayDate');
-var Streak = require('../src/Streak');
+const fs = require('fs');
+const DayDate = require('../src/DayDate');
+const Streak = require('../src/Streak');
 
-var CounterBar = require('../src/CounterBar');
-var DaysBar = require('../src/DaysBar.js');
-var DayDate = require('../src/DayDate.js');
+const CounterBar = require('../src/CounterBar');
+const DaysBar = require('../src/DaysBar.js');
+const DayDate = require('../src/DayDate.js');
 
 
-var habits = [];
+const habits = [];
 
 console.log('\x1B[37;1;4mLast 7 Days\x1B[0m');
 
@@ -15,16 +15,16 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
   habits = d.split(/\n/);
 
 
-  var done = [];
+  const done = [];
 
-  var dates = {};
+  const dates = {};
 
-  for (var i = 0; i < habits.length; i++) {
+  for (const i = 0; i < habits.length; i++) {
     if (!done.includes(habits[i].substring(0, habits[i].indexOf(',')))) {
       done = done.concat([habits[i].substring(0, habits[i].indexOf(','))])
       name = habits[i].substring(0, habits[i].indexOf(','));
 
-      for (var j = 0; j < habits.length; j++) {
+      for (const j = 0; j < habits.length; j++) {
         if (habits[j].startsWith(name)) {
           if (!dates[name]) {
             dates[name] = [];
@@ -33,12 +33,12 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
         }
       }
 
-      var howManyDays = 0;
-      var today = DayDate.today();
-      var sixDaysAgo = today.subtractDays(6);
-      var daysBar = new DaysBar(sixDaysAgo, today);
+      const howManyDays = 0;
+      const today = DayDate.today();
+      const sixDaysAgo = today.subtractDays(6);
+      const daysBar = new DaysBar(sixDaysAgo, today);
 
-      var currentDayDate = sixDaysAgo;
+      const currentDayDate = sixDaysAgo;
 
       console.log('\x1B[37;1m' + name + '\x1B[0m: ');
 

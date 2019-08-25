@@ -10,11 +10,11 @@ module.exports = class DaysBar {
   }
 
   printBar() {
-    var currentDayDate = this.range.from;
-    var bar = '';
+    const currentDayDate = this.range.from;
+    const bar = '';
 
     while (currentDayDate.toString() <= this.range.to.toString()) {
-      var dayDate = this.dayDates.find(dayDate => dayDate[0].toString() == currentDayDate.toString());
+      const dayDate = this.dayDates.find(dayDate => dayDate[0].toString() == currentDayDate.toString());
 
       if (dayDate) {
         if (dayDate[1]) {

@@ -12,10 +12,10 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
   habits = d.split(/\n/);
 
   let done = [];
-  let dates = {};
-  var times = 1;
+  const dates = {};
+  let times = 1;
 
-  for (var i = 0; i < habits.length; i++) {
+  for (let i = 0; i < habits.length; i++) {
     if (!done.includes(habits[i].substring(0, habits[i].indexOf(',')))) {
       done = done.concat([habits[i].substring(0, habits[i].indexOf(','))])
       name = habits[i].substring(0, habits[i].indexOf(','));
@@ -31,7 +31,7 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
         max = name.length;
       }
 
-      for (var j = 0; j < habits.length; j++) {
+      for (const j = 0; j < habits.length; j++) {
         if (habits[j].startsWith(name)) {
           if (times) {
             times++; // increment times
@@ -47,8 +47,8 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
       }
 
       streaks = [];
-      var prev = null;
-      var currentStreak = null;
+      const prev = null;
+      const currentStreak = null;
 
       // create streaks
       dates[name].forEach(dayDate => {
