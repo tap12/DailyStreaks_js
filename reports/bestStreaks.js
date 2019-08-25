@@ -83,3 +83,6 @@ fs.readFile('./data.txt', 'utf-8', function(e, d) {
 });
 
 console.log('\x1B[37;1;4mBest Streaks\x1B[0m');
+
+
+// ak... 'use strict';
