@@ -1,18 +1,18 @@
-var fs = require('fs');
-var DayDate = require('../src/DayDate');
-var Streaks = require('../src/Streaks');
-var Streak = require('../src/Streak');
-var genSpaces = require('../src/genSpaces.js');
+const fs = require('fs');
+const DayDate = require('../src/DayDate');
+const Streaks = require('../src/Streaks');
+const Streak = require('../src/Streak');
+const genSpaces = require('../src/genSpaces.js');
 
 
-var habits = [];
-var max; // Length of the longest habit name
+let habits = [];
+let max; // Length of the longest habit name
 
 fs.readFile('./data.txt', 'utf-8', function(e, d) {
   habits = d.split(/\n/);
 
-  var done = [];
-  var dates = {};
+  let done = [];
+  let dates = {};
   var times = 1;
 
   for (var i = 0; i < habits.length; i++) {
